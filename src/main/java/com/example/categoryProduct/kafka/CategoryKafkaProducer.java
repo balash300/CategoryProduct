@@ -1,4 +1,4 @@
-package com.example.categoryProduct.kafka.producer;
+package com.example.categoryProduct.kafka;
 
 import com.example.categoryProduct.dto.CategoryCreatedEvent;
 import org.springframework.kafka.core.KafkaTemplate;

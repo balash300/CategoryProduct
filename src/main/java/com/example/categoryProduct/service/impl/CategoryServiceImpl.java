@@ -3,7 +3,7 @@ package com.example.categoryProduct.service.impl;
 import com.example.categoryProduct.dto.CategoryCreatedEvent;
 import com.example.categoryProduct.dto.response.CategoryResponse;
 import com.example.categoryProduct.dto.request.CategoryRequest;
-import com.example.categoryProduct.kafka.producer.CategoryKafkaProducer;
+import com.example.categoryProduct.kafka.CategoryKafkaProducer;
 import com.example.categoryProduct.mapper.CategoryMapper;
 import com.example.categoryProduct.model.Category;
 import com.example.categoryProduct.repository.CategoryRepository;

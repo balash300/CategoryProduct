@@ -3,7 +3,6 @@ package com.example.categoryProduct.controller;
 import com.example.categoryProduct.dto.request.CategoryRequest;
 import com.example.categoryProduct.dto.response.CategoryResponse;
 import com.example.categoryProduct.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,6 @@ public class CategoryController {
 
     private final CategoryService service;
 
-    @Autowired
     public CategoryController(CategoryService service) {
         this.service = service;
     }
