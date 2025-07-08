@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper
 @Component
 public interface CategoryMapper {
     CategoryResponse toResponse(Category category);
