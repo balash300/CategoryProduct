@@ -8,6 +8,7 @@ import com.example.categoryProduct.mapper.CategoryMapper;
 import com.example.categoryProduct.model.Category;
 import com.example.categoryProduct.repository.CategoryRepository;
 import com.example.categoryProduct.service.CategoryService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -42,7 +43,11 @@ public class CategoryServiceImpl implements CategoryService {
         Category saved = repository.save(mapper.toEntity(categoryRequest));
 
         CategoryCreatedEvent event = new CategoryCreatedEvent(saved.getId(), saved.getName());
-        producer.sendCategoryCreatedEvent(event);
+        try {
+            producer.sendCategoryCreatedEvent(event);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
 
         return mapper.toResponse(saved);
     }

@@ -1,6 +1,8 @@
 package com.example.categoryProduct.dto;
 
-public class ProductCreatedEvent {
+import java.io.Serializable;
+
+public class ProductCreatedEvent implements Serializable {
     private Long id;
     private String name;
     private Double price;
